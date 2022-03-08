@@ -12,7 +12,7 @@ body {
 .header {
   padding: 60px;
   text-align: center;
-  background: #1abc9c;
+  background: #81138C;
   color: white;
 }
 
@@ -68,7 +68,8 @@ body {
 .footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  background: 81138c;
+  color: white;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
