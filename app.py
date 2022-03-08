@@ -15,4 +15,4 @@ def index(title=None):
 
 @app.route("/blog")
 def blog():
-  return "Blog"
+  return render_template('contact.html')
