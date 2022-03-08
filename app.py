@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
-f = open("static/website.json", 'a')
+f = open("static/data.json", 'a')
 json_dict = json.load(f)
 f.close()
 
