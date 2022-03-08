@@ -51,7 +51,7 @@ body {
 }
 
 /* Main column */
-.main {
+.content {
   flex: 70%;
   background-color: white;
   padding: 20px;
