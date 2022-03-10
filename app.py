@@ -32,5 +32,5 @@ def blog():
   test = []
   for row in cur.execute('select * from posts'):
                          test.append(row)
-  return(test)
+  return(test[0])
   #return render_template('contact.html')
