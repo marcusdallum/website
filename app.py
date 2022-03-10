@@ -31,7 +31,8 @@ def blog():
   cur = get_db().cursor()
   test = []
   for row in cur.execute('select title from posts'):
-                         test.append(row)
+    row = str(row)
+    test.append(row)
   #print(test[0])  
   #return(test[0])
   return render_template('blog.html' , title=test)
