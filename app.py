@@ -29,5 +29,8 @@ def index(title=None):
 @app.route("/blog")
 def blog():
   cur = get_db().cursor()
-  
+  test = []
+  for row in cur.execute(select * from posts'):
+                         test.append(row)
+  return(test)
   #return render_template('contact.html')
