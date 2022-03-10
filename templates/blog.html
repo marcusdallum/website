@@ -1,4 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<p> {{ title }} </p>
+{% for name in title %}
+<li> {{ name }} </li>
+{% endfor %}
 {% endblock %}
