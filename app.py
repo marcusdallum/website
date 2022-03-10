@@ -29,10 +29,11 @@ def index(title=None):
 @app.route("/blog")
 def blog():
   cur = get_db().cursor()
-  test = []
-  for row in cur.execute('select title from posts'):
-    row = str(row)
-    test.append(row)
+  title = cur.execute('select title from posts').fetchall()
+    #test = []
+  #for row in cur.execute('select title from posts'):
+  #  row = str(row)
+  #  test.append(row)
   #print(test[0])  
   #return(test[0])
-  return render_template('blog.html' , title=test)
+  return render_template('blog.html' , title=title)
