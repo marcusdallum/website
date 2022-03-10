@@ -12,6 +12,12 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
     return db
 
+def get_db_connection():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
@@ -28,8 +34,10 @@ def index(title=None):
 
 @app.route("/blog")
 def blog():
-  cur = get_db().cursor()
-  posts = cur.execute('select * from posts').fetchall()
+  #cur = get_db().cursor()
+  conn = get_db_connection()
+  posts = conn.execute('select * from posts').fetchall()
+  conn.close()
     #test = []
   #for row in cur.execute('select title from posts'):
   #  row = str(row)
