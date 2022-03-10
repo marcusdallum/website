@@ -34,4 +34,4 @@ def blog():
                          test.append(row)
   #print(test[0])  
   #return(test[0])
-  return render_template('contact.html' , title=test[0])
+  return render_template('blog.html' , content=test[0])
