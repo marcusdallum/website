@@ -32,5 +32,6 @@ def blog():
   test = []
   for row in cur.execute('select title from posts'):
                          test.append(row)
-  return(test[0])
+print(test[0])  
+return("hello")
   #return render_template('contact.html')
