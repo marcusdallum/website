@@ -34,6 +34,6 @@ def blog():
   #for row in cur.execute('select title from posts'):
   #  row = str(row)
   #  test.append(row)
-  #print(test[0])  
+  print(posts)  
   #return(test[0])
   return render_template('blog.html' , posts=posts)
