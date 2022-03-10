@@ -30,7 +30,7 @@ def index(title=None):
 def blog():
   cur = get_db().cursor()
   test = []
-  for row in cur.execute('select * from posts'):
+  for row in cur.execute('select title from posts'):
                          test.append(row)
   return(test[0])
   #return render_template('contact.html')
