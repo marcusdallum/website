@@ -29,7 +29,7 @@ def index(title=None):
 @app.route("/blog")
 def blog():
   cur = get_db().cursor()
-  title = cur.execute('select title from posts').fetchall()
+  title = cur.execute('select * from posts').fetchall()
     #test = []
   #for row in cur.execute('select title from posts'):
   #  row = str(row)
