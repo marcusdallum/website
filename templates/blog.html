@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-{% for name in title %}
-<li> {{ name['title'] }} </li>
+{% for post in posts %}
+<li> {{ post['title'] }} </li>
 {% endfor %}
 {% endblock %}
