@@ -6,11 +6,6 @@ app = Flask(__name__)
 
 DATABASE = 'test.db'
 
-def get_db():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-    return db
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
@@ -34,14 +29,8 @@ def index(title=None):
 
 @app.route("/blog")
 def blog():
-  #cur = get_db().cursor()
+ 
   conn = get_db_connection()
   posts = conn.execute('select * from posts').fetchall()
   conn.close()
-    #test = []
-  #for row in cur.execute('select title from posts'):
-  #  row = str(row)
-  #  test.append(row)
-  print(posts)  
-  #return(test[0])
   return render_template('blog.html' , posts=posts)
