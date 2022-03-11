@@ -29,7 +29,7 @@ def posts(title):
   url = None
   if title in titles:
         url = titles[title]
-  return render_template('hello_world.html' , post=post title=title)
+  return render_template('hello_world.html' , post=post , title=title)
 
 @app.route("/")
 def index(title=None):
