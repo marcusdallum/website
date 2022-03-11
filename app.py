@@ -26,9 +26,9 @@ def posts(title):
   conn = get_db_connection()
   post = conn.execute('select * from posts where indexNum=1').fetchall()
   conn.close()
-  url = None
-  if title in titles:
-        url = titles[title]
+  #url = None
+  #if title in titles:
+  #      url = titles[title]
   return render_template('hello_world.html' , post=post , title=title)
 
 @app.route("/")
