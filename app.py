@@ -24,9 +24,7 @@ def test():
   conn = get_db_connection()
   post = conn.execute('select * from posts where indexNum=1').fetchall()
   conn.close()
-  for row in post:
-        print(row[0])
-  return render_template('blog.html' , post=post)
+  return render_template('hello_world.html' , post=post)
 
 @app.route("/")
 def index(title=None):
