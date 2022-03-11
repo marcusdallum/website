@@ -24,6 +24,7 @@ def test():
   conn = get_db_connection()
   post = conn.execute('select * from posts where indexNum=1').fetchall()
   conn.close()
+  print(post)
   return render_template('blog.html' , post=post)
 
 @app.route("/")
