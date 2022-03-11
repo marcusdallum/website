@@ -19,9 +19,12 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
-@app.route("/test")
+@app.route("helloworld.html")
 def test():
-  return("test")
+  conn = get_db_connection()
+  post = conn.execute('select * from posts where IndexNum=1').fetchall()
+  conn.close()
+  return render_template('blog.html' , post=post)
 
 @app.route("/")
 def index(title=None):
