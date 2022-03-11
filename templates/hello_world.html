@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
+{% for x in post %}
 
-<h2> {{ post['title'] }} </h2>
-<p> {{ post['date'] }} </p>
-<p> {{ post['data'] }} </p>
 
+<h2> {{ x['title'] }} </h2>
+<p> {{ x['date'] }} </p>
+<p> {{ x['data'] }} </p>
+{% endfor %}
 {% endblock %}
