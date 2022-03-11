@@ -24,7 +24,7 @@ def close_connection(exception):
 @app.route("/posts/<title>")
 def posts(title):
   conn = get_db_connection()
-  post = conn.execute('select * from posts where indexNum=1').fetchall()
+  post = conn.execute('select * from posts where indexNum=2').fetchall()
   conn.close()
   #url = None
   #if title in titles:
