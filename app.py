@@ -22,7 +22,7 @@ def close_connection(exception):
 @app.route("hello_world.html")
 def test():
   conn = get_db_connection()
-  post = conn.execute('select * from posts where IndexNum=1').fetchall()
+  post = conn.execute('select * from posts where indexNum=1').fetchall()
   conn.close()
   return render_template('blog.html' , post=post)
 
