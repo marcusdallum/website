@@ -21,15 +21,19 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
-@app.route("/posts/<title>")
-def posts(title):
+@app.route("/posts/<slug>")
+def posts(slug):
+  post = []  
   conn = get_db_connection()
-  post = conn.execute('select * from posts where indexNum=2').fetchall()
+  posts = conn.execute("select * from posts").fetchall()
   conn.close()
-  #url = None
-  #if title in titles:
-  #      url = titles[title]
-  return render_template('hello_world.html' , post=post , title=title)
+  for x in posts:
+    if x[1] = slug:
+      return render_template('hello_world.html' , post=post , slug=slug)
+    else:
+      return render_template('about.html', title="The IT Manager")
+  
+  
 
 @app.route("/")
 def index(title=None):
