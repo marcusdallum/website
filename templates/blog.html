@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 {% for post in posts %}
-<h2> {{ post['title'] }}</h2>
+<a href="http://blog.dallum.net/posts/{{ post['title'] }}> <h2> {{ post['title'] }}</h2> </a>
 {% endfor %}
 <p>
   <a href="http://blog.dallum.net/posts/hello_world.html"> Link </a>
