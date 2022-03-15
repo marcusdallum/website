@@ -37,10 +37,9 @@ def index(title=None):
 
 @app.route("/blog")
 def blog():
-  POSTS = [] 
+
   conn = get_db_connection()
   posts = conn.execute('select * from posts').fetchall()
   conn.close()
-  for x in posts:
-    POSTS.append(x[2])
-  return render_template('blog.html' , POSTS=posts)
+
+  return render_template('blog.html' , posts=posts)
