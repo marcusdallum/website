@@ -4,7 +4,7 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
-DATABASE = 'test.db'
+DATABASE = 'data.db'
 
 titles = ['hello_world.html']
 
