@@ -55,5 +55,5 @@ def links():
   return render_template('links.html')
 
 @app.route("/resume")
-def links():
+def resume():
   return render_template('resume.html')
