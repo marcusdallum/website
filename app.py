@@ -23,15 +23,14 @@ def close_connection(exception):
 
 @app.route("/posts/<slug>")
 def posts(slug):
-  print(slug)
-  post = []  
+   
   conn = get_db_connection()
   posts = conn.execute("select * from posts").fetchall()
   conn.close()
-  for x in posts:
-    print(x[1])
-    if x[1] == slug:
-      return render_template('hello_world.html' , x=post , slug=slug)
+  for post in posts:
+    
+    if post[1] == slug:
+      return render_template('hello_world.html' , post=post , slug=slug)
   
   return render_template('about.html', title="The IT Manager")
   
