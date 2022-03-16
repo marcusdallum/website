@@ -31,7 +31,7 @@ def posts(slug):
   for x in posts:
     print(x[1])
     if x[1] == slug:
-      return render_template('hello_world.html' , post=post , slug=slug)
+      return render_template('hello_world.html' , x=post , slug=slug)
   
   return render_template('about.html', title="The IT Manager")
   
