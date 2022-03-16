@@ -4,8 +4,8 @@
 </head>
 {% block content %}
 {% for x in post %}
-<h2> {{ x[0] }} </h2>
-<p> {{ x[2] }} </p>
-<p> {{ x[3] }} </p>
+<h2> {{ x['title'] }} </h2>
+<p> {{ x['data'] }} </p>
+<p> {{ x['date'] }} </p>
 {% endfor %}
 {% endblock %}
