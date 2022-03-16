@@ -28,7 +28,7 @@ def posts(slug):
   posts = conn.execute("select * from posts").fetchall()
   conn.close()
   for x in posts:
-    if x[1] = slug:
+    if x[1] is slug:
       return render_template('hello_world.html' , post=post , slug=slug)
     else:
       return render_template('about.html', title="The IT Manager")
