@@ -30,8 +30,8 @@ def posts(slug):
   for x in posts:
     if x[1] is slug:
       return render_template('hello_world.html' , post=post , slug=slug)
-
-   return render_template('about.html', title="The IT Manager")
+  
+  return render_template('about.html', title="The IT Manager")
   
   
 
