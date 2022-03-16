@@ -45,7 +45,7 @@ def index(title=None):
 def blog():
 
   conn = get_db_connection()
-  posts = conn.execute('select * from posts ORDER BY date ASC').fetchall()
+  posts = conn.execute('select * from posts ORDER BY date DESC').fetchall()
   conn.close()
 
   return render_template('blog.html' , posts=posts)
