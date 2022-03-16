@@ -49,3 +49,11 @@ def blog():
   conn.close()
 
   return render_template('blog.html' , posts=posts)
+
+@app.route("/links")
+def links():
+  return render_template('links.html')
+
+@app.route("/resume")
+def links():
+  return render_template('resume.html')
