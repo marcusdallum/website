@@ -44,12 +44,17 @@ def index(title=None):
 
 @app.route("/blog")
 def blog():
-
+  titles = []
   conn = get_db_connection()
   posts = conn.execute('select * from posts ORDER BY date DESC').fetchall()
+  db_title = posts = conn.execute('select title from posts ORDER BY date DESC').fetchall()
   conn.close()
-
-  return render_template('blog.html' , posts=posts)
+  for title in db_title:
+    title = dict(title)
+    title['title'] = markdown.markdown(title['title'])
+    titles.append(title)
+                                       
+  return render_template('blog.html' , posts=posts, titles=titles)
 
 @app.route("/links")
 def links():
