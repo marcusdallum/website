@@ -47,7 +47,7 @@ def blog():
   titles = []
   conn = get_db_connection()
   posts = conn.execute('select * from posts ORDER BY date DESC').fetchall()
-  db_title = posts = conn.execute('select title from posts ORDER BY date DESC').fetchall()
+  db_title = conn.execute('select title from posts ORDER BY date DESC').fetchall()
   conn.close()
   for title in db_title:
     title = dict(title)
