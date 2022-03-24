@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
 {% for post in posts %}
-<a href="http://blog.dallum.net/posts/{{ post['slug'] }}"> <li> {{ post['date'] }} -- {{ titles[0] }}</li> </a>
+<a href="http://blog.dallum.net/posts/{{ post['slug'] }}"> <p> {{ post['date'] }} -- {{ titles['title'] }}</p> </a>
 {% endfor %}
 {% endblock %}
