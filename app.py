@@ -60,7 +60,7 @@ def blog():
     
 
                                        
-  return render_template('blog.html' , posts=posts_dict)
+  return render_template('blog.html' , posts_dict=posts_dict)
 
 @app.route("/links")
 def links():
