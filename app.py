@@ -31,10 +31,10 @@ def posts(slug):
   posts_dict = {}
   for x in posts:
     if x[1] == slug:
-      title = (markdown.markdown(x['title'])
+      title = x['title']
       data = markdown.markdown(x['data'])
       slug = x['slug']
-      date = markdown.markdown(x['date'])
+      date = x['date']
       posts_dict[slug] = {'title':title,'data':data,'slug':slug,'date':date}
       return render_template('hello_world.html' , posts_dict=post_dict , slug=slug)
   
