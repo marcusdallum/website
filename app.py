@@ -49,12 +49,18 @@ def blog():
   posts = conn.execute('select * from posts ORDER BY date DESC').fetchall()
   db_title = conn.execute('select title from posts ORDER BY date DESC').fetchall()
   conn.close()
-  for title in db_title:
-    title = dict(title)
-    title['title'] = markdown.markdown(title['title'])
-    titles.append(title)
+  posts_dict = {}
+
+  for x in posts:
+    title = markdown.markdown(x['title'])
+    data =  markdown.markdown(x['data'])
+    slug = markdown.markdown(x['slug'])
+    date = markdown.markdown(x['date'])
+    posts_dict[slug] = {'title':title,'data':data,'slug':slug,'date':date}
+    
+
                                        
-  return render_template('blog.html' , posts=posts, titles=titles)
+  return render_template('blog.html' , posts=posts_dict)
 
 @app.route("/links")
 def links():
