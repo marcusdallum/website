@@ -36,7 +36,7 @@ def posts(slug):
       slug = x['slug']
       date = x['date']
       posts_dict[slug] = {'title':title,'data':data,'slug':slug,'date':date}
-      return render_template('hello_world.html' , posts_dict=post_dict , slug=slug)
+      return render_template('hello_world.html' , posts_dict=posts_dict , slug=slug)
   
   return render_template('about.html', title="The IT Manager")
   
