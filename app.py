@@ -54,7 +54,7 @@ def blog():
   for x in posts:
     title = markdown.markdown(x['title'])
     data =  markdown.markdown(x['data'])
-    slug = markdown.markdown(x['slug'])
+    slug = x['slug']
     date = markdown.markdown(x['date'])
     posts_dict[slug] = {'title':title,'data':data,'slug':slug,'date':date}
     
