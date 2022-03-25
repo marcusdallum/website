@@ -28,11 +28,15 @@ def posts(slug):
   conn = get_db_connection()
   posts = conn.execute("select * from posts").fetchall()
   conn.close()
+  posts_dict = {}
   for x in posts:
-    
     if x[1] == slug:
-      post.append(x)
-      return render_template('hello_world.html' , post=post , slug=slug)
+      title = (markdown.markdown(x['title'])
+      data = markdown.markdown(x['data'])
+      slug = x['slug']
+      date = markdown.markdown(x['date'])
+      posts_dict[slug] = {'title':title,'data':data,'slug':slug,'date':date}
+      return render_template('hello_world.html' , posts_dict=post_dict , slug=slug)
   
   return render_template('about.html', title="The IT Manager")
   
