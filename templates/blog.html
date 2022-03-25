@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-{% for post in posts %}
-<a href="http://blog.dallum.net/posts/{{ post['slug'] }}"> <p> {{ post['date'] }} -- {{ titles['title'] }}</p> </a>
+{% for keys, nested_dict in posts_dict.items()  -%}
+<a href="http://blog.dallum.net/posts/{{ keys }}"> <p> {{ nested_dict.date }} -- {{ nested_dict.title }}</p> </a>
 {% endfor %}
 {% endblock %}
