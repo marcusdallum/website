@@ -1,9 +1,12 @@
 import sqlite3
 import markdown
+import feedparser
+import re
 from flask import g
 from flask import Flask
 from flask import render_template
 app = Flask(__name__)
+
 
 DATABASE = 'data.db'
 
@@ -73,3 +76,17 @@ def links():
 @app.route("/resume")
 def resume():
   return render_template('resume.html')
+
+@app.route("/feed")
+def feed():
+    slash = feedparser.parse("http://rss.slashdot.org/Slashdot/slashdotMain")
+    x=1
+    feeds_dict = {}
+    while x < 5:
+        txt = (slash.entries[x].summary_detail['value'])
+        y = re.split("<p", txt)
+        feeds_detail_list.append(y[0])
+        feeds_dict[x] = {'title':slash.entries[x].title,'data':y[0]}
+        x=x+1
+    return render_template('feed.html', feeds_dict=feeds_dict)
+
