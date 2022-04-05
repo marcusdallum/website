@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for keys, nested_dict in feeds_dict.items() %}
+ {{ nested_dict.title }} -- {{ nested_dict.detail }}
+{% endfor %}
+{% endblock %}
