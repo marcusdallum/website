@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
 {% for keys, nested_dict in feeds_dict.items() %}
-<p><h1>{{ nested_dict.title }}</p> <p>{{ nested_dict.data }}<p>
+<p><h1>{{ nested_dict.title }}</h1></p> <p>{{ nested_dict.data }}<p>
 {% endfor %}
 {% endblock %}
