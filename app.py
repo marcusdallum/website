@@ -85,7 +85,7 @@ def feed():
     while x < 5:
         txt = (slash.entries[x].summary_detail['value'])
         y = re.split("<p", txt)
-        feeds_dict[x] = {'title':slash.entries[x].title,'data':y[0]}
+        feeds_dict[x] = {'title':slash.entries[x].title,'data':y[0],'date':slash.entries[x].date,'link':slash.entries[x].link}
         x=x+1
     return render_template('feed.html', feeds_dict=feeds_dict)
 
