@@ -82,7 +82,7 @@ def feed():
     slash = feedparser.parse("http://rss.slashdot.org/Slashdot/slashdotMain")
     x=1
     feeds_dict = {}
-    while x < 5:
+    while x < 11:
         txt = (slash.entries[x].summary_detail['value'])
         y = re.split("<p", txt)
         feeds_dict[x] = {'title':slash.entries[x].title,'data':y[0],'date':slash.entries[x].date,'link':slash.entries[x].link}
