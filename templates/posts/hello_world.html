@@ -6,6 +6,6 @@
 {% for x in post %}
 <h2> {{ x[0] }} </h2>
 <p> {{ x[2] }} </p>
-<p> {{ x[3] }} </p>
+<p> {{ x[3] |safe }} </p>
 {% endfor %}
 {% endblock %}
