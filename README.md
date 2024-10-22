@@ -68,3 +68,11 @@ systemctl restart nginx
 systemctl status nginx
 
 browse to website
+
+Setup Firewall
+```
+ufw status
+ufw allow 'Nginx HTTP'
+ufw allow "OpenSSH"
+ufw enable
+ufw status verbose
