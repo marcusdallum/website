@@ -14,6 +14,8 @@ pip install flask gunicorn markdown feedparser
 
 gunicorn -w 4 -b 0.0.0.0:8000 app:app
 
+ctl-c
+
 vi wsgi.py
 
 ```
@@ -25,7 +27,7 @@ if __name__ == "__main__":
 
 gunicorn -w 4 -b 0.0.0.0:8000 wsgi:app
 
-ctl c
+ctl-c
 
 vi /etc/supervisor/conf.d/website.conf
 
