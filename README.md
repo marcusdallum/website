@@ -16,4 +16,11 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 
 vi wsgi.py
 
+```
+from app import app
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
 gunicorn -w 4 -b 0.0.0.0:8000 wsgi:app
