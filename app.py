@@ -30,7 +30,7 @@ def posts():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
-    return render_template('blog.html', posts=posts ,  title="The IT Manager")
+    return render_template('posts.html', posts=posts ,  title="The IT Manager")
 
 #@app.route("/posts/<slug>")
 #def posts(slug):
