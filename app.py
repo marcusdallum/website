@@ -25,23 +25,30 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
-@app.route("/posts/<slug>")
-def posts(slug):
-  post = []
-  conn = get_db_connection()
-  posts = conn.execute("select * from posts").fetchall()
-  conn.close()
-  posts_dict = {}
-  for x in posts:
-    if x[1] == slug:
-      title = x['title']
-      data = markdown.markdown(x['data'])
-      slug = x['slug']
-      date = x['date']
-      posts_dict[slug] = {'title':title,'data':data,'slug':slug,'date':date}
-      return render_template('hello_world.html' , posts_dict=posts_dict , slug=slug)
+@app.route("/posts")
+def posts():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('about.html', title="The IT Manager")
+
+#@app.route("/posts/<slug>")
+#def posts(slug):
+#  post = []
+#  conn = get_db_connection()
+#  posts = conn.execute("select * from posts").fetchall()
+#  conn.close()
+#  posts_dict = {}
+#  for x in posts:
+#    if x[1] == slug:
+#      title = x['title']
+#      #data = markdown.markdown(x['data'])
+#      #slug = x['slug']
+#      #date = x['date']
+#      #posts_dict[slug] = {'title':title,'data':data,'slug':slug,'date':date}
+#      return render_template('hello_world.html' , posts_dict=posts_dict , slug=slug)
   
-  return render_template('about.html', title="The IT Manager")
+#  return render_template('about.html', title="The IT Manager")
   
   
 
