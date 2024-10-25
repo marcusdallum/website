@@ -25,7 +25,7 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
-@app.route("/posts")
+@app.route("/blog1")
 def posts():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
