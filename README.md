@@ -10,7 +10,9 @@ python3 -m venv website
 
 source website/bin/activate
 
-pip install flask gunicorn markdown feedparser
+pip install flask gunicorn markdown feedparser sqlite3
+
+python3 init_db.py
 
 gunicorn -w 4 -b 0.0.0.0:8000 app:app
 
