@@ -1,8 +1,0 @@
-{% extends "layout.html" %}
-{% block content %}
-{% for keys, nested_dict in posts_dict.items() %}
-<h2> {{ nested_dict.title }} </h2>
-<p> {{ nested_dict.date }} </p>
-<p> {{ nested_dict.data |safe }} </p>
-{% endfor %}
-{% endblock %}
